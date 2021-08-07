@@ -1,9 +1,29 @@
+import { GetStaticProps } from 'next';
+import { getPrismicCLient } from '../services/prismic';
+import { RichText } from 'prismic-dom';
+import Prismic from '@prismicio/client';
 import styles from '../styles/home.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
-import TechsImage from '../../public/images/techs.svg'
+import TechsImage from '../../public/images/techs.svg';
 
-export default function Home() {
+type Content = {
+  title: string;
+  titleContent: string;
+  linkAction: string;
+  mobileTitle: string;
+  mobileContent: string;
+  mobileBanner: string;
+  webTitle: string;
+  webContent: string;
+  webBanner: string;
+}
+interface ContentProps{
+  content: Content;
+}
+
+export default function Home({ content }: ContentProps) {
+
   return (
     <>
       <Head>
@@ -15,7 +35,7 @@ export default function Home() {
             <h1>Levando você ao próximo nível!</h1>
             <p>Uma plataforma com cursos que vão do zero até o profissional na pratica, direto ao ponto aplicando o que usamos no mercado de trabalho. 👊</p>
             <a>
-              <button>Coemçar agora!</button>
+              <button>Começar agora!</button>
             </a>
           </div>
             <img src="/images/banner-conteudos.png" alt="Conteúdos bla bla" />
@@ -54,4 +74,36 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicCLient();
+  const response = await prismic.query([
+    Prismic.Predicates.at('document.type', 'home')
+  ])
+
+  console.log(response.results[0].data);
+
+  const {
+    title, sub_title, link_action, mobile, mobile_content, mobile_banner, web, web_content, web_banner
+  } = response.results[0].data;
+
+  const content = {
+    title: RichText.asText(title),
+    titleContent: RichText.asText(sub_title),
+    linkAction: link_action.url,
+    mobileTitle: RichText.asText(mobile),
+    mobileContent: RichText.asText(mobile_content),
+    mobileBanner: mobile_banner.url,
+    webTitle: RichText.asText(web),
+    webContent: RichText.asText(web_content),
+    webBanner: web_banner.url,
+  }
+
+  return {
+    props: {
+      content
+    },
+    revalidate: 60 * 60 // revalida a página a cada 1 hora.
+  }
 }
