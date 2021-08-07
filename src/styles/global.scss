@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 :root {
   --white: #fff; // textos
   --gray-100: #afafaf;
