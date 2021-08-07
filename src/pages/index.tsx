@@ -32,9 +32,9 @@ export default function Home({ content }: ContentProps) {
       <main className={styles.container}>
         <section className={styles.containerHeader}>
           <div className={styles.ctaText}>
-            <h1>Levando você ao próximo nível!</h1>
-            <p>Uma plataforma com cursos que vão do zero até o profissional na pratica, direto ao ponto aplicando o que usamos no mercado de trabalho. 👊</p>
-            <a>
+            <h1>{content.title}</h1>
+            <p>{content.titleContent}</p>
+            <a href="{content.linkAction}">
               <button>Começar agora!</button>
             </a>
           </div>
@@ -45,19 +45,19 @@ export default function Home({ content }: ContentProps) {
 
         <section className={styles.sectionContent}>
           <div>
-            <h2>Aprenda criar  aplicativos para Android e iOS</h2>
-            <p>Você vai descobrir o jeito mais moderno de desenvolver apps nativos para iOS e Android, construindo aplicativos do zero até aplicativos.</p>
+            <h2>{content.mobileTitle}</h2>
+            <p>{content.mobileContent}</p>
           </div>
-          <img src="/images/financasApp.png" alt="smartphone" />
+          <img src={content.mobileBanner} alt="smartphone" />
         </section>
 
         <hr className={styles.divisor } />
 
         <section className={styles.sectionContent}>
-          <img src="/images/webDev.png" alt="Aplicações web" />
+          <img src={content.webBanner} alt="Aplicações web" />
           <div>
-            <h2>Aprenda criar sistemas web</h2>
-            <p>Criar sistemas web, sites usando as tecnologias mais modernas e requisitadas pelo mercado.</p>
+            <h2>{content.webTitle}</h2>
+            <p>{content.webContent}</p>
           </div>
         </section>
 
@@ -65,7 +65,7 @@ export default function Home({ content }: ContentProps) {
           <Image src={TechsImage} alt="Tecnologias" />
           <h2>Mais de <span>15 mil</span> já levaram sua carreira ao próximo nivel.</h2>
           <p>E você vai perder a chance de evoluir de uma vez por todas?</p>
-          <a href="#">
+          <a href={content.linkAction}>
             <button>Acessar turma</button>
           </a>
         </section>
