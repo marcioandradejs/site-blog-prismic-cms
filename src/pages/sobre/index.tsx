@@ -31,7 +31,7 @@ export default function Sobre({ content }: ContentProps) {
           <section className={styles.ctaText}>
             <h1>{content.title}</h1>
             <p>{content.description}</p>
-            <a href={content.youtube}>
+            <a href={content.yoututbe}>
               <FaYoutube size={40} />
             </a>
             <a href={content.instagram}>
