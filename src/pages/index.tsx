@@ -33,22 +33,22 @@ export default function Home({ content }: ContentProps) {
         <title>Home - Site da Empresa X</title>
       </Head>
       <main className={styles.container}>
-      <div className={styles.containerHeader}>
-        <section className={styles.ctaText}>
-          <h1>{content.title}</h1>
-          <span>{content.titleContent}</span>
-          <a href={content.linkAction}>
-            <button>
-              COMEÇAR AGORA!
-            </button>
-          </a>
-        </section>
+        <div className={styles.containerHeader}>
+          <section className={styles.ctaText}>
+            <h1>{content.title}</h1>
+            <p>{content.titleContent}</p>
+            <a href={content.linkAction}>
+              <button>
+                COMEÇAR AGORA!
+              </button>
+            </a>
+          </section>
 
-        <img 
-            src={content.bannerprincipal} 
-            alt={content.title} 
-        />
-      </div>
+          <img 
+              src={content.bannerprincipal} 
+              alt={content.title} 
+          />
+        </div>
 
         <hr className={styles.divisor } />
 
