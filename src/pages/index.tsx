@@ -41,7 +41,9 @@ export default function Home({ content }: ContentProps) {
               <button>Começar agora!</button>
             </a>
           </div>
+          <div className={styles.containerBanner}>
             <img src={content.bannerprincipal} alt={content.title} />
+          </div>
         </section>
 
         <hr className={styles.divisor } />
