@@ -9,6 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  img {
+    max-width: 640px;
+  }
 }
 
 .ctaText {
@@ -22,43 +26,26 @@
     color: var(--white);
   }
 
-  p {
+  span {
     font-size: 1rem;
     line-height: 2.25rem;
     color: var(--white);
   }
 
   button {
-    background: var(--blue-900);
+    background-color: var(--blue-900);
     border: 0;
     padding: 1rem 1.8rem;
     margin-top: 2.5rem;
-    border-radius: 8px;
+    border-radius: 7px;
     color: var(--white);
     font-weight: bold;
-    text-transform: uppercase;
-    transition: filter 0.2s, transform 0.2s;
-
-    &:hover {
-      filter: brightness(1.2);
-      transform: scale(1.05);
-    }
-  }
-}
-
-.ctaImg {
-  max-width: 500px;
-  margin: 5.5rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    max-width: 100%;
   }
 }
 
 .divisor {
+  width: 100%;
+  bottom: 0;
   height: 1px;
   border-color: var(--gray-200);
 }
@@ -70,7 +57,7 @@
   align-items: center;
   justify-content: center;
 
-  div {
+  section {
     max-width: 670px;
   }
 
@@ -79,17 +66,17 @@
   }
 
   h2 {
-    color: var(--white);
     font-size: 2.2rem;
     line-height: 4.5rem;
     font-weight: 900;
     margin-top: 2.2rem;
+    color: var(--white);
   }
 
-  p {
-    color: var(--white);
+  span {
     font-size: 1rem;
     line-height: 2.25rem;
+    color: var(--white);
   }
 }
 
@@ -102,42 +89,37 @@
   flex-direction: column;
 
   h2 {
-    color: var(--white);
     font-size: 2.8rem;
     line-height: 4.5rem;
     font-weight: 900;
-    margin-top: 2.2rem;
+    color: var(--white);
 
     span {
+      font-size: 2.8rem;
+      line-height: 4.5rem;
+      font-weight: 900;
       color: var(--blue-900);
     }
   }
 
-  p {
-    color: var(--white);
+  span {
     font-size: 1rem;
     line-height: 2.25rem;
+    color: var(--white);
   }
 
   button {
-    background: var(--blue-900);
+    background-color: var(--blue-900);
     border: 0;
     padding: 1rem 1.8rem;
     margin-top: 2.5rem;
-    border-radius: 8px;
+    border-radius: 6px;
     color: var(--white);
     font-weight: bold;
-    text-transform: uppercase;
-    transition: filter 0.2s, transform 0.2s;
-
-    &:hover {
-      filter: brightness(1.2);
-      transform: scale(1.05);
-    }
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1095px) {
   .container {
     .containerHeader {
       padding: 0 2rem;
@@ -145,16 +127,20 @@
       button {
         display: block;
       }
+    }
 
-      img {
-        max-width: 600px;
-      }
+    img {
+      max-width: 600px;
+    }
 
-      section h1 {
-        font-size: 3rem;
-      }
+    div h1 {
+      font-size: 3rem;
+    }
 
-      section h2 {
+    div h2 {
+      font-size: 2.3rem;
+
+      span {
         font-size: 2.3rem;
       }
     }
@@ -166,41 +152,35 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 950px) {
   .container {
     .containerHeader {
       flex-direction: column;
 
       button {
-        display: flex;
         width: 100%;
+        display: flex;
         justify-content: center;
         align-items: center;
       }
-
-      img {
-        max-width: 500px;
-      }
-
-      section h1 {
-        font-size: 3rem;
-      }
     }
 
-    .sectionContent,
-    .nextLevelContent {
-      flex-direction: column;
+    div img {
+      max-width: 500px;
+    }
 
+    div h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    .sectionContent {
+      flex-direction: column;
       img {
         margin-top: 2rem;
-        max-width: 400px;
-      }
-    }
-
-    .ctaImg {
-      max-width: 500px;
-
-      img {
         max-width: 400px;
       }
     }
