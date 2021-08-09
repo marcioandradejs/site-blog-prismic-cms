@@ -10,6 +10,7 @@ import TechsImage from '../../public/images/techs.svg';
 type Content = {
   title: string;
   titleContent: string;
+  bannerprincipal: string;
   linkAction: string;
   mobileTitle: string;
   mobileContent: string;
@@ -24,6 +25,8 @@ interface ContentProps{
 
 export default function Home({ content }: ContentProps) {
 
+  console.log(content.bannerprincipal)
+
   return (
     <>
       <Head>
@@ -34,11 +37,11 @@ export default function Home({ content }: ContentProps) {
           <div className={styles.ctaText}>
             <h1>{content.title}</h1>
             <p>{content.titleContent}</p>
-            <a href="{content.linkAction}">
+            <a href={content.linkAction}>
               <button>Começar agora!</button>
             </a>
           </div>
-            <img src="/images/banner-conteudos.png" alt="Conteúdos bla bla" />
+            <img src={content.bannerprincipal} alt={content.title} />
         </section>
 
         <hr className={styles.divisor } />
@@ -83,12 +86,15 @@ export const getStaticProps: GetStaticProps = async () => {
   ])
 
   const {
-    title, sub_title, link_action, mobile, mobile_content, mobile_banner, web, web_content, web_banner
+    title, sub_title, bannerprincipal, link_action, mobile, mobile_content, mobile_banner, web, web_content, web_banner
   } = response.results[0].data;
+
+  console.log(response.results[0].data)
 
   const content = {
     title: RichText.asText(title),
     titleContent: RichText.asText(sub_title),
+    bannerprincipal: bannerprincipal.url,
     linkAction: link_action.url,
     mobileTitle: RichText.asText(mobile),
     mobileContent: RichText.asText(mobile_content),

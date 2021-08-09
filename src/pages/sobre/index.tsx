@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
     banner,
     facebook,
     instagram,
-    yoututbe,
+    youtube,
     linkedin
   } = response.results[0].data;
 
@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
     banner: banner.url,
     facebook: facebook.url,
     instagram: instagram.url,
-    yoututbe: yoututbe.url,
+    youtube: youtube.url,
     linkedin: linkedin.url
   }
 
