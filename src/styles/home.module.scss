@@ -11,7 +11,7 @@
   justify-content: space-between;
 
   img {
-    max-width: 640px;
+    max-width: 500px;
   }
 }
 
@@ -26,7 +26,7 @@
     color: var(--white);
   }
 
-  span {
+  p {
     font-size: 1rem;
     line-height: 2.25rem;
     color: var(--white);
@@ -73,7 +73,7 @@
     color: var(--white);
   }
 
-  span {
+  p {
     font-size: 1rem;
     line-height: 2.25rem;
     color: var(--white);
@@ -94,7 +94,7 @@
     font-weight: 900;
     color: var(--white);
 
-    span {
+    p {
       font-size: 2.8rem;
       line-height: 4.5rem;
       font-weight: 900;
@@ -102,7 +102,7 @@
     }
   }
 
-  span {
+  p {
     font-size: 1rem;
     line-height: 2.25rem;
     color: var(--white);
@@ -140,7 +140,7 @@
     div h2 {
       font-size: 2.3rem;
 
-      span {
+      p {
         font-size: 2.3rem;
       }
     }
@@ -166,7 +166,9 @@
     }
 
     div img {
-      max-width: 500px;
+      max-width: 400px;
+      margin-bottom: 5rem;
+      margin-top: 2rem;
     }
 
     div h1 {
