@@ -30,7 +30,7 @@ export default function Home({ content }: ContentProps) {
   return (
     <>
       <Head>
-        <title>Home - Sujeito Programador</title>
+        <title>Home - Site da Empresa X</title>
       </Head>
       <main className={styles.container}>
         <section className={styles.containerHeader}>
